@@ -3,7 +3,7 @@ class Account {
     listOfTransactions = [];
 
     getBalance(balance) {
-        this.currentBalance;
+        return this.balance;
     }
 
     getListOfTransactions() {
