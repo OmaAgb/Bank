@@ -25,6 +25,25 @@ describe(`Account Tests`, () => {
         // Assert 
         expect(actual).toBe(expected);
     })
+
+
+
+   
+    it(`Test 3 - Test addToListOfTransactions increases the listOfTransactions array length`, () => {
+        // Arrange
+        const account = new Account();
+        const expected = 1;
+        let transaction;
+        // Act
+        account.addToListOfTransactions(transaction);
+        const actual = account.listOfTransactions.length;
+        // Assert 
+        expect(actual).toBe(expected);
+    })
+
+
+
+
 });
 
 

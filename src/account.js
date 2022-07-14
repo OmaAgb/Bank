@@ -7,9 +7,9 @@ class Account {
     }
 
     getListOfTransactions() {
-        this.listOfTransactions;
+       return this.listOfTransactions;
     }
-    addToListOfTransactions() {
+    addToListOfTransactions(transaction) {
         this.listOfTransactions.push(transaction);
     }
 }
