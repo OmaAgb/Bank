@@ -1,19 +1,11 @@
 class Transaction {
-
-    transactionType(type) {
-        this.transactionType;
-        return (type ? 'credit' : 'debit')
-    }
-
-    //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor
-    constructor(date, amount, transactionType, currentBalance) {
-        this.date = new Date(date);
+    
+    constructor(date = ``, amount = Number, transactionType = `credit` || `debit`, newBalance = Number) {
+        this.date = date;
         this.amount = amount;
-        this.currentBalance = currentBalance;
-        this.transactionType = transactionType(type)
-
+        this.newBalance = newBalance;
+        this.transactionType = transactionType;
     }
-  
 }
 
-module.exports = Transaction
+module.exports = Transaction;

@@ -1,24 +1,32 @@
 class Account {
-    balance = 0;
-    listOfTransactions = [];
 
-    getBalance(balance) {
-        return this.balance;
+    #balance;
+    #listOfTransactions = [];
+
+
+    constructor(balance = 0) {
+        this.#balance = balance;
     }
 
-    getListOfTransactions() {
-        return this.listOfTransactions;
+
+    getBalance() {
+        return this.#balance;
     }
+
+
+    setBalance(newBalance) {
+        this.#balance = newBalance;
+    }
+
+
+    get listOfTransactions() {
+        return this.#listOfTransactions;
+    }
+
+
     addToListOfTransactions(transaction) {
-        this.listOfTransactions.push(transaction);
+        this.#listOfTransactions.push(transaction);
     }
-
- 
 }
 
 module.exports = Account;
-
-
-// maybe balance should be private?
-//need method that adds to balance if credit
-//need method that removes from balance if debit 
