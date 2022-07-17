@@ -24,7 +24,7 @@ describe(`Account Tests`, () => {
         const actual = account.listOfTransactions.length
         // Assert 
         expect(actual).toBe(expected);
-    })
+    });
 
 
 
@@ -39,7 +39,8 @@ describe(`Account Tests`, () => {
         const actual = account.listOfTransactions.length;
         // Assert 
         expect(actual).toBe(expected);
-    })
+    });
+
 
 
 
