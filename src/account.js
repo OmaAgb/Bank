@@ -4,8 +4,8 @@ class Account {
     #listOfTransactions = [];
 
 
-    constructor(balance = 0) {
-        this.#balance = balance;
+    constructor() {
+        this.#balance = 0;
     }
 
 
@@ -14,18 +14,25 @@ class Account {
     }
 
 
-    setBalance(newBalance) {
-        this.#balance = newBalance;
+    setBalance(amount, type) {
+        if (type === 'credit') { this.#balance = this.#balance + amount; }
+        if (type === 'debit') { this.#balance = this.#balance - amount; }
     }
 
 
-    get listOfTransactions() {
+    getListOfTransactions() {
         return this.#listOfTransactions;
     }
 
 
-    addToListOfTransactions(transaction) {
+    addTransaction(transaction) {
         this.#listOfTransactions.push(transaction);
+    }
+
+    makeTransaction(transaction) {
+        this.setBalance(transaction.amount, transaction.type);
+        transaction.setTBalance(getBalance());
+        this.addTransaction(transaction);
     }
 }
 

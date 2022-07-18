@@ -14,7 +14,7 @@ describe(`Account Tests`, () => {
     });
 
 
-    it(` Test 2 - Account balance can be changed using setCapacity`, () => {
+    it(` Test 2 - Account balance can be changed using setBalance`, () => {
         // Arrange
         const account = new Account();
         const expected = 50;
@@ -49,18 +49,18 @@ describe(`Account Tests`, () => {
         expect(actual).toBe(expected);
     });
 
-//     it(`Test 5`, () => {
-//         // Arrange
-//         const account = new Account();
-//         let amount = 100;
-//         let expected = 50;
-//         let newExpected = 150
-//         // Act
-//         account.setBalance(expected);
-//         const actual = amount += expected
-//         // Assert
-//         expect(actual).toBe(newExpected)
-//     });
+    it(`Test 5`, () => {
+        // Arrange
+        const account = new Account();
+        let amount = 100;
+        let expected = 50;
+        let newExpected = 150
+        // Act
+        account.setBalance(expected);
+        const actual = amount += expected
+        // Assert
+        expect(actual).toBe(newExpected)
+    });
 // look for more sophisticated way to do this 
 });
 

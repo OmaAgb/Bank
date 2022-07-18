@@ -21,6 +21,10 @@ statementList = []
         return this.statement;
     }
 
+    // printHeader(){ console.log("date || credit || debit || balance") }
+
+    // printRow(){ }
+
 }
 
 

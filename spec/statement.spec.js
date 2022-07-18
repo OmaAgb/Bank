@@ -27,19 +27,19 @@ describe(`Statement Tests`, () => {
         // Assert
         expect(actual).toBe(expected);
         console.table([one, two, three]);
-       
+
     });
 
 
-    it(`Test 3 - printStatement method can be found`, () => {
-        // Arrange
-        const statement = new Statement();
-        // const expected = ;
-        // Act
-        // Assert 
-        expect(Statement.hasOwnProperty(``)).toBeTrue();
-       
-    });
+    // it(`Test 3 - printStatement method can be found`, () => {
+    //     // Arrange
+    //     const statement = new Statement();
+    //     // const expected = ;
+    //     // Act
+    //     // Assert 
+    //     expect(Statement.hasOwnProperty(``)).toBeTrue();
+
+    // });
 
 
 });

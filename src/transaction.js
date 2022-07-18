@@ -1,10 +1,14 @@
 class Transaction {
-    
-    constructor(date = ``, amount = Number, transactionType = `credit` || `debit`, newBalance = Number) {
+
+    constructor(date, amount, type) {
         this.date = date;
         this.amount = amount;
-        this.newBalance = newBalance;
-        this.transactionType = transactionType;
+        this.tBalance = 0;
+        this.type = type;
+    }
+
+    setTBalance(amount) {
+        this.tBalance = amount;
     }
 }
 
