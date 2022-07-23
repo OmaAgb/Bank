@@ -1,30 +1,13 @@
-const { ConsoleReporter } = require("jasmine");
-
 class Statement {
 
-statementList = []
- 
-    constructor(date, credit, debit, balance) {
-        this.date = date
-        this.credit = credit;
-        this.debit = debit;
-        this.balance = balance;
-    }
+    printStatement(Account) {
 
+        for (let i = 0; i < Account.getListOfTransactions().length; i++) {
+            console.log(Account.getListOfTransactions()[i].getDate() + `||` + Account.getListOfTransactions()[i].getAmount() + `||` + Account.getListOfTransactions()[i].getType());
+        }; 
 
-    addToStatementList(statement) {
-        this.statementList.push(statement);
-    }
-
-
-    printStatement() {
-        return this.statement;
-    }
-
-    // printHeader(){ console.log("date || credit || debit || balance") }
-
-    // printRow(){ }
-
+       return `Your statement is now ready to view`;
+    };
 }
 
 

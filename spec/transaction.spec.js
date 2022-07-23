@@ -1,20 +1,40 @@
 const Transaction = require("../src/transaction");
-const Account = require('../src/account');
 
 
 describe(`Transaction Tests`, () => {
 
-    it(`Test 1 - different transactions can be found in listOfTransactions`, () => {
+    it(`Test 1 - default transactionBalance value is 0`, () => {
         // Arrange
-        const transaction1 = new Transaction(`10/01/2012`, 1000, `credit`, 1000);
-        const transaction2 = new Transaction(`13/01/2012`, 2000, `credit`, 3000);
-        const transaction3 = new Transaction(`14/01/2012`, 500, `debit`, 2500);
-        const account = new Account();
-        const expected = true;
+        const transaction = new Transaction();
+        const expected = 0;
         // Act
-        account.addToListOfTransactions(transaction1, transaction2, transaction3)
-        const actual = account.listOfTransactions.includes(transaction1, transaction2, transaction3);
+        const actual = transaction.getTransactionBalance();
         // Assert
         expect(actual).toEqual(expected);
     });
-})
+
+
+    it(`Test 2 - transactionBalance can be changed using setTransactionBalance`, () => {
+        // Arrange
+        const transaction = new Transaction();
+        transaction.getTransactionBalance();
+        const expected = transaction.getAmount();
+        // Act
+        const actual = transaction.setTransactionBalance(300);
+        // Assert
+        expect(actual).toEqual(expected);
+    });
+
+
+    it(`Test 3 - test that the date and type of transaction can be accessed`, () => {
+        // Arrange
+        const transaction = new Transaction(`25/12/2022`, 500, `credit`);
+
+        const expected = true
+        // Act
+        const actual = transaction.getType().includes(`credit`);
+        // Assert
+        expect(expected).toBe(actual);
+    });
+
+});

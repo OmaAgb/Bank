@@ -3,37 +3,40 @@ class Account {
     #balance;
     #listOfTransactions = [];
 
-
-    constructor() {
-        this.#balance = 0;
+    constructor(balance = 0) {
+        this.#balance = balance;
     }
-
 
     getBalance() {
         return this.#balance;
     }
 
-
-    setBalance(amount, type) {
-        if (type === 'credit') { this.#balance = this.#balance + amount; }
-        if (type === 'debit') { this.#balance = this.#balance - amount; }
+    setBalance(amount, transactionType) { // 2000, 'debit'
+        if (transactionType === `credit`) {
+            this.#balance += amount // 1000 + 2000
+        } else if (transactionType === `debit`) {
+            this.#balance -= amount
+        };
     }
-
 
     getListOfTransactions() {
         return this.#listOfTransactions;
     }
 
-
-    addTransaction(transaction) {
+    addToListOfTransactions(transaction) {
         this.#listOfTransactions.push(transaction);
     }
 
-    makeTransaction(transaction) {
-        this.setBalance(transaction.amount, transaction.type);
-        transaction.setTBalance(getBalance());
-        this.addTransaction(transaction);
+    makeTransaction(transaction) { // 2000 , 'debit'
+        this.setBalance(transaction.amount, transaction.type); // 3000
+        transaction.setTransactionBalance(this.getBalance()); // getBalance() = 3000
+        this.addToListOfTransactions(transaction);
     }
+
 }
 
 module.exports = Account;
+
+
+
+
