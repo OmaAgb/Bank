@@ -12,6 +12,7 @@ const transaction3 = new Transaction(`14/01/2012`, 500, `debit`);
 account.makeTransaction(transaction1);
 account.makeTransaction(transaction2);
 account.makeTransaction(transaction3);
+
 statement.printStatement(account);
 
 // console.log(account.getListOfTransactions()[0].getDate());

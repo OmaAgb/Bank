@@ -8,7 +8,9 @@ describe(`Transaction Tests`, () => {
         const transaction = new Transaction();
         const expected = 0;
         // Act
-        const actual = transaction.getTransactionBalance();
+        const actual = transaction.getTransactionBalance(
+            
+        );
         // Assert
         expect(actual).toEqual(expected);
     });

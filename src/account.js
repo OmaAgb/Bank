@@ -12,10 +12,10 @@ class Account {
     }
 
     setBalance(amount, transactionType) { // 2000, 'debit'
-        if (transactionType === `credit`) {
-            this.#balance += amount // 1000 + 2000
-        } else if (transactionType === `debit`) {
-            this.#balance -= amount
+        if (transactionType === `credit`) 
+            this.#balance += amount; // 1000 + 2000
+        else if(transactionType === `debit`) {
+            this.#balance -= amount;
         };
     }
 
@@ -28,11 +28,10 @@ class Account {
     }
 
     makeTransaction(transaction) { // 2000 , 'debit'
-        this.setBalance(transaction.amount, transaction.type); // 3000
+        this.setBalance(transaction.getAmount(), transaction.getType()); // 3000
         transaction.setTransactionBalance(this.getBalance()); // getBalance() = 3000
         this.addToListOfTransactions(transaction);
     }
-
 }
 
 module.exports = Account;
